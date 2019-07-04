@@ -1,0 +1,31 @@
+\section{Requisitos del Sistema}
+
+Esta sección describe los requisitos funcionales del sistema que se empleará en esta experiencia, sus interfaces externas, sus relaciones internas  y las pruebas que se harán para verificar que los requisitos se cumplen.
+
+\subsection{Requisitos Funcionales}
+
+Los requisitos funcionales definen el comportamiento del sistema. Es decir, describen lo que debe hacer el sistema.\\[-0.9cm]
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.7\textwidth}}
+RF1 & Se debe generar una señal compuesta proporcional a las señales de entrada Ve1 y Ve2, tal que $Va = Ve2 + k*Ve1$. (sólo MOD 1) \\
+RF2 & Se debe generar una señal $Vs1 = n*Ve1$, dónde $n$ depende del nivel continuo 	originado por Ve2.\\[-0.9cm]
+\end{tabular}
+\end{table}
+
+\subsection{Requisitos de Prueba}
+Los requisitos de prueba son pruebas que se deben hacer sobre el sistema para determinar que se cumplan los requisitos funcionales.\\[-0.8cm]
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.7\textwidth}}
+RP1 & Se debe obtener la característica punto a punto ($id = f(vd)$) de un diodo 1n4148 o similar (simulación, para diseñar). \\[-0.3cm]
+RP2 & A la frecuencia $\geq$ a $3 [KHz]$, la impedancia de los condensadores debe ser “despreciable” respecto a la resistencia equivalente que “ven” entre sus terminales.\\[-0.3cm]
+RP3 & Para el MOD 1 (desconectado del MOD 2): Con $Ve1 = 100sen (2\pi$  $3000$  $t)[mV]$ y $ Ve2 = 6.7 [V]$, se debe obtener entre el terminal a y tierra, un modelo equivalente de  Thevenin a ca : $VT_{ca} = 50sen(2\pi$  $3000$  $t)[mV]$ y $ZT_{ca} \geq 85[\Omega]$. \\[-0.3cm]
+RP4 & Conectando los dos módulos entre sí, con las condiciones de entrada indicadas en RP3 y habiendo obtenida la característica $id = f(vd)$, se debe lograr que el punto de operación sea $Q = (18[mA], 0,72[V])$. \\[-0.3cm]
+RP5 & R4 debe ser mayor a 10 veces la resistencia dinámica del diodo en ese punto.\\[-0.3cm]
+RP6 & Determinar $k$ y $n = \frac{Vs1}{Ve1}$, para 4 valores distintos de Ve2, uno de ellos debe lograr $n = 0.5$.\\[-0.3cm]
+RP7 & Determinar el equivalente Thevenin, a “pequeña señal”, entre el terminal c y tierra para $n \leq 0.3$.
+\end{tabular}
+\end{table}

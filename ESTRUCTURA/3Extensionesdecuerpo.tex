@@ -1,0 +1,145 @@
+\section{Anillos y cuerpos}
+\subsection{Definiciones y resultados básicos}
+\begin{defi}
+Sea R un conjunto no vació, en el que están definidas dos operaciones: suma y multiplicación ($+ \land \times$). Diremos que $(R,+,\times)$ es un anillo si y sólo si:
+\begin{enumerate}
+    \item $(R,+)$ es un grupo abeliano. Además, para todo $a,b,c \in R$:
+    \item $a\times b\in R$,
+    \item $(a\times b)\times c = a\times (b\times c),$,
+    \item $a\times (b\times c) = a\times b + a\times c$ y $(b+c)\times a = b\times a + c\times a$.
+\end{enumerate}
+\end{defi}
+\begin{ejemplo}
+El conjunto de los números enteros $Z$ tiene la estructura algebraica de un anillo. Además, es un anillo conmutativo y con elemento unidad, que es precisamente el 1.
+\end{ejemplo}
+Se dice que un anillo es conmutativo, si $a\times b = b\times a$ para todo $a,b\in R$. Si existe un elemento denotado por 1 en $R$ tal que $1\times a = a\times 1 = a$ para todo $a\in R$, se dice que es un anillo con elemento unidad.
+\begin{defi}
+Si $R$ es un anillo conmutativo con elemento unidad $1\neq 0$ tal que todos los elementos no nulos de $R$ admiten inversos multiplicativos en $R$, entonces diremos que $R$ es un cuerpo.
+\end{defi}
+Sea $F$ un cuerpo. Notemos que el inverso multiplicativo del 0 no existe, por lo tanto, para $(F,\times)$ esta definida para todo elemento en $F-\lbrace 0\rbrace$.
+\begin{defi}
+Si $S$ es un subconjunto de un anillo $R$ y $S$ es un anillo con las mismas operaciones sumas y multiplicación de $R$, entonces se dice que $S$ es un subanillo de $R$.
+\end{defi}
+Para demostrar que un subconjunto de un anillo $R$ es un anillo, se puede utilizar el siguiente lema, que es bastante análogo a la hora de demostrar si un subconjunto es un subespecie vectorial.
+\begin{lema}
+Un subconjunto $S$ de un anillo $R$ es un subanillo de $R$, si y sólo si,
+\begin{enumerate}
+    \item $0\in S$,
+    \item para todo $a,b\in S:a-b\in S$,
+    \item para todo $a,b\in S:ab\in S$,
+\end{enumerate}
+\end{lema}
+\begin{ejemplo}
+El conjunto de los números enteros $Z$ tiene la estructura algebraica de un anillo. Además, es un anillo conmutativo y con elemento unidad, que es precisamente el 1.
+\end{ejemplo}
+Un anillo $R$ es conmutativo, si $a\times b = b\times a$ para todo $a,b\in R$. Si existe un elemento denotado como 1 en R tal que $1\times a=a\times 1 = a$ para todo $a\in R$, entonces el anillo $R$ es unitario o con elemento unidad.
+\begin{defi}
+Si $R$ es un anillo conmutativo con elemento unidad $1\neq 0$ tal que todos los elementos no nulos de $R$ admiten inversos multiplicativos en $R$, entonces diremos que $R$ es un cuerpo.
+\end{defi}
+Notemos que $(R,\times)=(R,+)-\lbrace 0 \rbrace$, pues el elemento 0 es el único elemento que no posee un inverso multiplicativo.
+\begin{ejemplo}
+El conjunto de los números enteros $Z$ no es un cuerpo, pues no posee inversos multiplicativos para todo elemento no nulo en $Z$, pero los números racionales $Q$ si son un cuerpo, pues todo elemento en $Q$ posee un inverso multiplicativo.
+\end{ejemplo}
+\begin{defi}
+Si $S$ es un subconjunto de un anillo $R$ y $S$ es un anillo con las mismas operaciones suma y multiplicación de $R$, entonces se dice que $S$ es un subanillo de R.
+\end{defi}
+La definición anterior es bastante análoga a la definición de un subespacio vectorial, tal como se ha visto en clases. También se puede definir de otra manera, con el lema posterior.
+\begin{defi}
+Un subconjunto $S$ de un anillo $R$ es un subanillo de $R$, si y sólo si,
+\begin{enumerate}
+    \item $0\in S$,
+    \item para todo $a,b\in S: a-b\in S$,
+    \item para todo $a,b\in S: ab\in S$.
+\end{enumerate}
+\end{defi}
+Los siguientes ejemplos de anillos serán los mas utilizados en este trabajo de investigación, los cuales son:
+\begin{enumerate}
+    \item El conjunto $Z[x]$ de todos los polinomios con coeficientes en $Z$, con las operaciones usuales de suma y multiplicación de polinomios, es un dominio de integridad.
+    \item El conjunto $Z[i]=\lbrace a+bi/a,b\in Z \rbrace$, donde $i$ es el numero complejo, con las operaciones usuales de suma y multiplicación de números complejos, es un dominio de integridad.
+\end{enumerate}
+Un anillo $R$ es un dominio de integridad, si es un anillo conmutativo y con elemento unidad $(1\neq 0)$ y sin divisores del cero. Un elemento es un divisor de cero, si existe un elemento no nulo $b\in R$ tal que $a\times b = 0$.
+\begin{defi}
+Un subconjunto $U$ de un anillo $R$, se dice que es un ideal de $R$, si:
+\begin{enumerate}
+    \item $0\in U$,
+    \item para todo $a,b\in U:a-b\in U$,
+    \item para todo $u\in U$ y $r\in R : ur\in U$ y $ru\in R$.
+\end{enumerate}
+\end{defi}
+\begin{ejemplo}
+El conjunto $Z[i]$, con las operaciones usuales de suma y multiplicación de números complejos, es un subanillo de $C$, pero $Z[i]$ no es ideal de $C$.
+\end{ejemplo}
+\begin{teo}
+Sea $R$ un anillo conmutativo con elemento unidad y $a_{1},...,a_{k}$ elementos en $R$. Entonces el conjunto $U=\lbrace a_{1}x_{1}+...+a_{k}x_{k}/x_{1},...,x_{k}\in R \rbrace$ es un ideal de $R$. Se dice que $U$ es el ideal de $R$ generado por los elementos $a_{1},...,a_{k}$ y se denota $U=\langle a_{1},...,a_{k} \rangle$.
+\end{teo}
+\begin{defi}
+Sea $R$ un anillo conmutativo con elemento unidad. Diremos que $R$ es un anillo de ideales principales, si para cada ideal $U$ de $R$ existe un elemento $a\in R$ tal que $U = \langle a \rangle = \lbrace ax / x\in R \rbrace$.
+\end{defi}
+\begin{lema}
+Si $U, V$ son ideales de un anillo $R$, entonces $U+V=\lbrace u+v/u\in U,v\in V\rbrace$ es un ideal de $R$.
+\end{lema}
+\begin{ejemplo}
+En $Z$, $\langle 2,5 \rangle = \langle 1 \rangle = Z$, ya que, $3\times 2 + (-1)\times 5 = 1$, por lo tanto, es un ideal principal.
+\end{ejemplo}
+\begin{defi}
+Si un subconjunto $F$ de un cuerpo $K$, con las mismas operaciones de suma y producto de $K$, es un cuerpo, entonces diremos que $F$ es un subcuerpo de $K$ (denotado por $F\leq Q$).
+\end{defi}
+Nuevamente, tal como sucede en álgebra lineal, existe un lema que permite demostrar lo anterior:
+\begin{lema}
+Sea $K$ un cuerpo y $F$ un subconjunto de $K$. Entonces $F$ es un subcuerpo de $K$, si y sólo si,
+\begin{enumerate}
+    \item $0\in F$,
+    \item para todo $a,b\in F : a-b\in F$ y $ab\in F$,
+    \item $1\in F$ es un elemento en $F$,
+    \item para todo elemento no nulo en $F$ el inverso multiplicativo está en $F$.
+\end{enumerate}
+\end{lema}
+\begin{ejemplo}
+Se demostrará que $Q(i)=\lbrace a+bi/a,b\in Q \rbrace$ es un subcuerpo de $C$. 
+\begin{enumerate}
+    \item $0 = 0 + 0i \in Q(i)$.
+    \item Sean $a+bi$, $c+di$ con $a,b,c,d\in Q$. Entonces
+    \[(a+bi)-(c+di)=(a-c)+(b-d)i\in Q(i)\]
+    y
+    \[(a+bi)(c+di)=(ac-bd)+(ad+bc)i \in Q(i)\].
+    \item $1=1+0i\in Q(i)$.
+    \item Sea $a+bi \neq 0$ con $a,b\in Q$. Entonces $a\neq 0$ o $b\neq 0$, de donde $a^{2}+b^{2}>0$. El inverso multiplicativo de $a+bi$ es 
+    \[(a+bi)^{-1}=\frac{a}{a^{2}+b^{2}}-\frac{b}{a^{2}+b^{2}}i\in Q(i)\].
+\end{enumerate}
+\end{ejemplo}
+Consideremos a continuación un ideal $U$ de un anillo $R$. Dado que $(U,+)$ es un subgrupo de $(R,+)$, se puede definir el conjunto $R/U=\lbrace a+U/a\in R \rbrace$. De acuerdo a la teoria de grupos, el conjunto $R/U$ es un grupo bajo la adición donde 
+\[(a+U)+(b+U)=(a+b)+U\]
+para todo $a,b \in R$. Mientras que la multiplicación esta definida como
+\[(a+U)(b+U)=ab+U\]
+para todo $a,b\in R$. Este anillo es conocido como el anillo cuociente de $R$ por $U$.
+\begin{defi}
+Sea $R$ una anillo. Un ideal $M$ de $R$ con $M\neq R$ se dice que es un ideal maximal de $R$, si dado un ideal $U$ de $R$ tal que $M\subset U \subset R$, entonces $M=U$ o $U=R$. Es decir, no existe un ideal $U$ de $R$ tal que $M\subsetneq U \neq R$.
+\end{defi}
+\begin{ejemplo}
+Demostraremos que el ideal $<7>=7Z$ de $Z$ es un ideal maximal de Z.
+Sea un U ideal de $Z$ tal que $7Z\subset U \subset Z$. Como $Z$ es un anillo de ideales principales y $U\neq \lbrace 0 \rbrace (7\in U)$, entonces existe $n\in Z^{+}$ tal que $U=nZ$. Dado que $7Z\subset  nZ$, entonces existe $n\in Z^{+}$ tal que $7=nq$. Lo anterior implica que $n=7$ o $n=1$. Si $n=7$, entonces $7Z=U$ y si $n=1$, entonces $U=Z$. Por lo tanto, $7Z$ es un ideal maximal de $Z$.
+\end{ejemplo}
+Del ejemplo anterior, se puede observar que el ideal $pZ$ sera maximal, si y sólo si, p es un numero primo. Esto se puede ver intuitivamente en el ejemplo.\\
+El siguiente teorema es fundamental para la teoría de cuerpos, pues permite la construcción de un cuerpo a partir de un anillo conmutativo con elemento unidad y de un ideal maximal de anillos.
+\begin{teo}
+Sea $R$ un anillo conmutativos son elemento unidad $1\neq 0$ y $M$ un ideal de $R$. Entonces $M$ un ideal maximal de $R$, si y sólo si, $R/M$ es un cuerpo.
+\begin{proof}
+Supongamos que $M$ es un ideal maximal de $R$. Debemos mostrar que $R/M$ es un anillo conmutativo con elemento unidad tal que todos los elementos no nulos en $R/M$  admiten inversos multiplicativos en $R/M$.\\
+Sabemos que $R/M$ es un anillo conmutativo con elemento unidad $1+M\neq 0+M$. Se probará a continuación que, si $a+M\in R/M$ con $a+M\neq 0+M$, o sea $a\notin M$, entonces $a+M$ no tiene inverso multiplicativo en $R/M$. Ahora, $\langle a \rangle$ y $M$ son ideales de $R$ y por el lema 2.1.2, $M+\langle a \rangle$ es un ideal de $R$.
+Como $a\notin M$ y $a=0+a\in M+\langle a \rangle$, entonces $M\subsetneq M+\langle a \rangle$. Por hipótesis, $M$ es un ideal maximal de R, por lo tanto, se debe tener que $M+\langle a \rangle = R$. Dado que $1\in R$, entonces existen $m\in M$ y $b\in R$ tal que $1=m+ab$, lo que implica $ab-1=-m\in M$. Luego, $ab+M=1+M$. Por lo cual, $(a+M)(b+M)=1+M$ y así, $(a+M)^{-1}=b+M$.\\
+Supongamos que $R/M$ es un cuerpo. Debemos probar que $M$ es un ideal maximal de $R$. Sea $U$ un ideal de $R$ tal que $M \subsetneq U \subset R$. Demostraremos que $U=R$. Utilizando la definición 2.1.7, obtenemos que $U/M=\lbrace u+M/U\in U\rbrace$ es un ideal de $R/M$.
+Claramente, $0+M\in U/M$, además, si $u_{1}+M$, $u_{2}+M$ son elementos en $U/M$ y $r+M\in R/M$, entonces
+\[(u_{1}+M)-(u_{2}+M)=(u_{1}+u_{2})+M\in U/M\]
+y
+\[(r+M)(u_{1}+M)=ru_{1}+M\in U/M\]
+Como $M\subsetneq U$, existe $u\in U$ tal que $u\notin M$. Luego, $u+M\in U/M$ y $u+M\neq 0+M$, lo que demuestra $U/M\neq \lbrace 0+M \rbrace$. Por hipótesis, $R/M$ es un cuerpo, por lo tanto, sus únicos ideales son $\lbrace 0+M \rbrace$ y $R/M$. Concluimos que, $U/M=R/M$. Consideremos $x\in R$, entonces existe $u\in U$ tal que $x+M=u+M$, de donde $x-u\in M\subset U$ y así, $x\in U$. Por lo tanto, $R=U$, lo que demuestra que $M$ es un ideal maximal de $R$.
+\end{proof}
+\end{teo}
+\begin{lema}
+Si p es un número primo, entonces $Z/pZ$ es un cuerpo con p elementos.
+\begin{proof}
+Si p es un número primo, entonces $pZ$ es un ideal maximal de $Z$. Por el teorema 2.1.2, $Z/pZ$ es un cuerpo.\\
+Demostraremos a continuación que $Z/pZ = \lbrace a+pZ / 0\leq a < p \rbrace$. Si $b+pZ\in Z/pZ$, entonces por el algoritmo de Euclides, existen enteros $q,r$ tales que $b=pq+r$ con $0\leq r <p$. Así, $b-r=pq\in pZ$, de donde $b+pZ = r+pZ$ con $0\leq r < p$.//
+Ahora demostraremos que $Z/pZ$ tiene $p$ elementos. Supongamos que existen elementos $a+pZ, c+pZ$ en $Z/pZ$ tales que $a+pZ = c+pZ$ con $0\leq a < c < p$. Entonces $c-a\in pZ$ y $0\leq c-a < p$, lo que es una contradicción. De esta forma hemos demostrado que $Z/pZ$ es un cuerpo con $p$ elementos.
+\end{proof}
+\end{lema}

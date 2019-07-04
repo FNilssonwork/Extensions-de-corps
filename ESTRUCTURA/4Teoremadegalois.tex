@@ -1,0 +1,54 @@
+\section{Teorema de Galois}
+\subsection{Extensión de Galois}
+\begin{defi}
+Sean E y K extensiones de F. Si $\sigma : E\rightarrow K$ es un homomorfismo no nulo de cuerpos (por lo tanto $\sigma(1_{E})=1_{K}$) es una función F-lineal, entonces $\sigma_{|F}=id_{F}$. Recíprocamente, si $\sigma : E\rightarrow K$ es tal que $\sigma_{|F}=id_{F}$, entonces $\sigma$ es F-lineal. En conjunto de todos los F-automorfismos de una extensión E de F es un grupo respecto a la composición de funciones y se anota $Aut_{F}E$, y se llama grupo de Galois de la extensión.
+\end{defi}
+\begin{defi}
+Si $H < Aut_{F}E$, se define $E^{H}=\lbrace a\in E: \sigma(a)=a, \forall \sigma \in H$. Este conjunto se llama el cuerpo fijo de H.
+\end{defi}
+\begin{defi}
+Sea E/F. Entonces la extensión se llama de Galois si $F=E^{Aut_{F}E}$.
+\end{defi}
+\begin{prop}
+Sea E/F. Entonces son equivalentes
+\begin{enumerate}
+    \item E/F es algebraica y de Galois.
+    \item E/F es normal y separable
+\end{enumerate}
+\end{prop}
+\begin{lema}
+Sean E/K, K/T, T/F. Entonces $Aut_{E}E=\lbrace id_{E} \rbrace < Aut_{K}E < Aut_{T}E < Aut_{F}E$.\\
+Sean $H < J < Aut_{F}E$. Entonces $E=E^{Aut_{E}E}/E^{H}/E^{J}/E^{Aut_{F}E}$.
+\end{lema}
+\begin{teo}
+(Teorema de Galois). Sea E/F extensión finita y de Galois. Entonces:\\
+Existe una biyección entre los cuerpos intermedios K de la extensión y los subgrupos H del grupo de Galois $Aut_{F}E$, dado por $\varphi(K)=Aut_{K}E$. La inversa de la biyección esta dada por la función $\psi(H)=E^{H}$. Para esta correspondencia se cumple también que si E/K/T/E, entonces $[K:F]=[Aut_{T}E:Aut_{K}E]$, y que si $H < J < Aut_{F}E$, entonces $[J:H]=[E^{H}:E^{J}]$. En particular, se tiene que $|Aut_{F}E|=[E:F]$.\\
+Además, si E/K/F. Entonces E/F es una extensión de Galois. Por último, K/F es extensión de Galois si y sólo si $\varphi(K)=Aut_{K}E \triangleleft Aut_{F}E$, y en este caso, $Aut_{F}K \simeq Aut_{K}E$.
+\end{teo}
+\begin{lema}
+\begin{enumerate}
+    \item Si E/K/F entonces K/$(\varphi \circ \psi)(K)=E^{Aut_{K}E}$.
+    \item Si $H < Aut_{F}E$, entonces $H/(\varphi \circ \psi)(H)=Aut_{E^{H}}E$
+\end{enumerate}
+\end{lema}
+\begin{lema}
+Sea E/K/T/F tal que $[K:T]$ es finita. Entonces $[\varphi(T):\varphi(K)]=[Aut_{T}E:Aut_{K}E]\leq [K:T]$. En particular, se tiene que E/F es una extensión finita, entonces $|Aut_{F}E|\leq [E:F]$.
+\end{lema}
+\begin{lema}
+Si $H < J < Aut_{F}E$, con $[J:H]$ es finito, entonces $[\psi(H):\psi(J)]=[E^{H}:E^{J}]\leq [J:H]$.
+\end{lema}
+\begin{lema}
+\begin{enumerate}
+    \item Sea E/K/T/F tal que $[K:T]$ es finito. Si $T=E^{Aut_{T}E}$, entonces $K=E^{Aut_{K}E}$ y $[Aut_{T}E:Aut_{K}E]=[K:T]$.
+    \item Sea $H < J < Aut_{F}E$, con $[J:H]$ es finito. Si $H=Aut_{E^{H}}E$, entonces $J=Aut_{E^{J}}E$ y $[E^{H}:E^{J}]=[J:H]$.
+\end{enumerate}
+\end{lema}
+\begin{prop}
+Consideremos las extensiones E/F y L/F, donde la primera es de Galois y finita. Entonces EL/L y $E/E\;\cap L$ son extensiones de Galois y $Aut_{L}EL \simeq Aut_{E\;\cap L}E$.
+\end{prop}
+\begin{prop}
+Sean E/F y L/F extensiones finitas y de Galois. Sean $G=Aut_{F}EL$, $H_{1}=Aut_{F}E$, $H_{2}=Aut_{F}L$. Entonces EL/F es una extensión de Galois y la función $\eta : G \rightarrow H_{1}\times H_{2}$ dada por $\eta(\sigma)=(\sigma_{|E},\sigma_{|L})$ es un monomorfismo de grupos que es un isomorfismo si $F=E\cap L$.
+\end{prop}
+\begin{prop}
+Sea E un cuerpo y sea H un grupo de automorfismmos de E. Si $F=E^{H}$, entonces E/F es una extensión de Galois. Si H es un grupo finito, entonces $H=Aut_{F}E$.
+\end{prop}

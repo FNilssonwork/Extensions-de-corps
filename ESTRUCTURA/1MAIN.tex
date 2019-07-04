@@ -1,0 +1,227 @@
+\documentclass[final, letterpaper, 12pt]{article}
+
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[hypcap]{caption}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{eufrak}
+\usepackage{amsmath}
+\usepackage[justification=centering]{caption}
+\usepackage{multirow}
+\usepackage{mathrsfs} % para formato de letra
+\usepackage{amssymb, amsmath, amsbsy} % simbolitos
+\usepackage{listings}
+\usepackage[compatibility=false]{caption}
+\usepackage{color}
+%\usepackage{xcolor}
+%\usepackage{inconsolata}
+\usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{lmodern}
+\usepackage{import}
+\usepackage{float}
+\usepackage[margin=1.1in, foot=30pt, head = 30pt, bottom = 1.3in]{geometry}
+\usepackage{hyphenat}
+\usepackage[document]{ragged2e}
+\usepackage{array}
+\usepackage{epstopdf}
+\usepackage{imakeidx}
+\usepackage[bookmarks=true, hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{titlesec}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{gensymb}
+\usepackage{setspace}
+
+
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+\newtheorem{defi}{{\it Definición}}[subsection]
+\newtheorem{ejemplo}{{\it Ejemplo}}[subsection]
+\newtheorem{teo}{{\it Teorema}}[subsection]
+\newtheorem{prop}{{\it Proposición}}[subsection]
+\newtheorem{coro}{{\it Corolario}}[subsection]
+\newtheorem{lema}{{\it Lema}}[subsection]
+\newtheorem{lema}{{\it Lema}}
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\graphicspath{{./img/}}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\definecolor{darkblue}{rgb}{0,0,0.6}
+\definecolor{darkgray}{rgb}{0.3,0.3,0.3}
+\definecolor{lightgray}{rgb}{0.98,0.98,0.98}
+
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1 {ñ}{{\~n}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+\lstset{
+    language=Matlab, % choose the language of the code
+    basicstyle=\fontfamily{pcr}\selectfont\footnotesize\color{black},
+    keywordstyle=\color{darkblue}\bfseries, % style for keywords
+    numbers=none, % where to put the line-numbers
+    numberstyle=\tiny, % the size of the fonts that are used for the line-numbers     
+    backgroundcolor=\color{lightgray},
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false, % show tabs within strings adding particular underscores
+    frame=single, % adds a frame around the code
+    tabsize=2, % sets default tabsize to 2 spaces
+    rulesepcolor=\color{gray},
+    rulecolor=\color{black},
+    captionpos=b, % sets the caption-position to bottom
+    breaklines=true, % sets automatic line breaking
+    breakatwhitespace=false,
+    inputencoding=utf8,
+    extendedchars=true,
+    commentstyle= \color{gray}\itshape,
+    inputpath=code,
+}
+
+\DeclareCaptionFont{white}{ \color{white} }
+\DeclareCaptionFormat{listing}{
+  \colorbox[cmyk]{0.43, 0.35, 0.35,0.01 }{
+    \parbox{\textwidth}{\hspace{15pt}#1#2#3}
+  }
+}
+\captionsetup[lstlisting]{ format=listing, labelfont=white, textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize} }
+
+
+
+% Turn on the style
+\pagestyle{fancy}
+% Clear the header and footer
+\fancyhead{}
+\fancyfoot{}
+\fancyhead{}
+% Set the right side of the footer to be the page number
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Portada %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\justifying
+\begin{titlepage}
+
+\begin{figure}[t]
+\includegraphics[width=0.33\linewidth]{Imagenes/1MAIN/logo-usm-g.jpg} \hspace{4.8cm}
+\includegraphics[width=0.33\linewidth]{Imagenes/1MAIN/logo_mat.png}\\[3.2cm]
+\end{figure}
+
+\begin{center}
+\Huge{ \bfseries{Trabajo de Investigación\\[1.1cm]
+Extensiones de cuerpos. Monomorfismos de cuerpos. La norma y la traza. Discriminante\\[1.8cm]}}
+\end{center}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\textbf{Fecha}       & 28/6/2019                          \\
+\textbf{Integrantes} & Roberto Gonzalez          \\
+                     & Matias Alvarez             \\
+                     & Francisco Nilsson              \\
+\multicolumn{2}{l}{}                                       \\
+\textbf{Asignatura}  & Algebra Lineal \\
+\textbf{Profesores}  & Gonzalo Riquelme  \\                   
+\end{tabular}
+\end{table}
+
+\vspace{1.5cm}
+\begin{center}
+\end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%% Índice %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\pdfbookmark{\contentsname}{Contents}
+\tableofcontents
+
+%\cleardoublepage
+\newpage
+
+\addcontentsline{toc}{section}{Índice de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+
+%\cleardoublepage
+\addcontentsline{toc}{section}{Índice de tablas} % para que aparezca en el indice de contenidos
+\listoftables % indice de tablas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%% Estructura %%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+\pagenumbering{arabic}
+\input{ESTRUCTURA/2Introduccion.tex} 
+\newpage
+
+\input{ESTRUCTURA/3Extensionesdecuerpo.tex} 
+\newpage
+
+\input{ESTRUCTURA/4Teoremadegalois.tex} 
+\newpage
+
+\input{ESTRUCTURA/5RequisitosSIS.tex}
+\newpage
+
+\input{ESTRUCTURA/6DisenoSistema.tex}
+\newpage
+
+\input{ESTRUCTURA/7ResultadosLAB.tex}
+\newpage
+
+\input{ESTRUCTURA/8Conclusiones.tex}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
